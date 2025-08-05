@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sales Forecasting</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>📈 Sales Forecasting</h1>
+    <p>Predict monthly sales for a store using a pre-trained Gradient Boosting model.</p>
+
+    <form method="post">
+      <label>Store ID:</label>
+      <select name="store_id">
+        {% for s in stores %}
+          <option value="{{ s }}">{{ s }}</option>
+        {% endfor %}
+      </select>
+
+      <label>Year:</label>
+      <input type="number" name="year" value="2024" required>
+
+      <label>Month (1-12):</label>
+      <input type="number" name="month" min="1" max="12" value="1" required>
+
+      <label>Promotion (0 = no, 1 = yes):</label>
+      <select name="promo">
+        <option value="0">0 - No</option>
+        <option value="1">1 - Yes</option>
+      </select>
+
+      <label>Previous Month Sales (use last month's sales as a starting point):</label>
+      <input type="number" name="prev_month_sales" step="0.01" value="5000" required>
+
+      <button type="submit">Predict Sales</button>
+    </form>
+
+    {% if prediction is not none %}
+      <div class="result">
+        {% if prediction is string and prediction.startswith("Error") %}
+          <p class="error">{{ prediction }}</p>
+        {% else %}
+          <h2>Predicted Sales: <span class="big">₹ {{ prediction }}</span></h2>
+          {% if inputs %}
+            <div class="small">
+              <strong>Inputs:</strong>
+              Store {{ inputs.store_id }}, {{ inputs.year }}-{{ inputs.month }}, promo={{ inputs.promo }}, prev={{ inputs.prev_month_sales }}
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
