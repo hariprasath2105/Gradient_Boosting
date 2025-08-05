@@ -35,17 +35,17 @@ The dataset (`monthly_sales.csv`) contains:
 sales-forecasting-app/
 │
 ├── static/
-│   └── style.css               # Gradient + colorful UI styling
+│   └── style.css            
 │
 ├── templates/
-│   └── index.html               # Web form & results display
+│   └── index.html             
 │
-├── app.py                       # Flask backend
-├── train_model.py               # Script to generate dataset & train model
-├── model.pkl                    # Trained Gradient Boosting model
-├── scaler.pkl                   # StandardScaler for inputs
-├── monthly_sales.csv            # Synthetic dataset
-└── README_Sales_Forecasting.md  # This file
+├── app.py                  
+├── train_model.py       
+├── model.pkl           
+├── scaler.pkl                 
+├── monthly_sales.csv            
+└── README_Sales_Forecasting.md  
 ```
 
 ---
@@ -86,8 +86,13 @@ Go to:
 5. Enter **Previous Month Sales** (estimate if unknown)  
 6. Click **Predict Sales**
 
+<img width="769" height="626" alt="image" src="https://github.com/user-attachments/assets/65b1d733-4e56-42b5-9a1c-7a1c3df613a6" />
+
+
 You’ll get:
-- **Predicted monthly sales** (₹ by default — can change symbol in HTML)
+- **Predicted monthly sales** (₹ by default)
+
+<img width="769" height="626" alt="image" src="https://github.com/user-attachments/assets/ed87d0bb-374a-4512-b615-31b41c266a24" />
 
 ---
 
