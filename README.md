@@ -1,12 +1,11 @@
-
-# 📈 Sales Forecasting App (Gradient Boosting + Flask)
+# Sales Forecasting App (Gradient Boosting)
 
 This is a simple web application that predicts **monthly sales** for a store using a **Gradient Boosting Regression** model.  
 The dataset used is **synthetic** and includes store-level sales data with seasonality and promotions.
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 The dataset (`monthly_sales.csv`) contains:
 - `store_id` → Store identifier (1–10)
@@ -22,14 +21,21 @@ The dataset (`monthly_sales.csv`) contains:
 ## 🛠 Tech Stack
 
 - **Python 3**
-- **Flask** (web framework)
-- **scikit-learn** (GradientBoostingRegressor)
-- **pandas**, **numpy** (data processing)
-- **HTML/CSS** (frontend UI)
+- **Flask**
+- **scikit-learn**
+- **pandas**, **numpy** 
+- **HTML/CSS** 
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 sales-forecasting-app/
@@ -50,7 +56,7 @@ sales-forecasting-app/
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### 1. Install dependencies
 ```bash
@@ -61,11 +67,6 @@ pip install flask scikit-learn pandas numpy
 ```bash
 python train_model.py
 ```
-This will regenerate:
-- `monthly_sales.csv`
-- `model.pkl`
-- `scaler.pkl`
-
 ### 3. Run the app
 ```bash
 python app.py
@@ -77,7 +78,7 @@ Go to:
 
 ---
 
-## 🖥 Example Usage
+## Example Usage
 
 1. Select **Store ID** (1–10)  
 2. Enter **Year** (e.g., 2024)  
@@ -95,15 +96,3 @@ You’ll get:
 <img width="769" height="626" alt="image" src="https://github.com/user-attachments/assets/ed87d0bb-374a-4512-b615-31b41c266a24" />
 
 ---
-
-## 📌 Notes
-- The dataset is synthetic for demonstration purposes.
-- Replace `monthly_sales.csv` with your own real sales data for production use.
-- Feature engineering includes seasonality (`month_sin`, `month_cos`), which helps model monthly patterns.
-- To improve accuracy, add more features like holidays, regional events, marketing campaigns, or prices.
-
----
-
-## 🙋 Author
-**Hari Prasath S**  
-GitHub: [@hariprasath2105](https://github.com/hariprasath2105)
